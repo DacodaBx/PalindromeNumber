@@ -1,5 +1,28 @@
-# PalindromeNumber
-Is a Number a Palindrome
+public class PalindromeNumber {
+    public static void main(String[] args){
+        int x = 123;
+        System.out.println(isPalindrome(x));
+    }
+    public static boolean isPalindrome(int x) {
+        if (x == 0){
+            return true;
+        }
+        if (x < 0 || x % 10 == 0) {
+            return false;
+        }
+        int reversedInt = 0;
+        while(x > reversedInt) {
+            int pop = x % 10;
+            x /= 10;
+            reversedInt = (reversedInt * 10) + pop;
+        }
+        if (x == reversedInt || x == reversedInt / 10) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+}
 
 /*Dacoda's Notes: 
  * "A Palindrome is => A palindrome is a word, number, phrase,
